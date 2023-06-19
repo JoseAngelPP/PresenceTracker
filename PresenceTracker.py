@@ -42,8 +42,17 @@ class PresenceTracker:
         total_minutes = duration.total_seconds() // 60
         return int(total_minutes)
 
-    def read_file(self, input_file):
-        with open(input_file, "r") as file:
+    def read_file(self, input_data):
+        """
+        Los tests usan StringIO para simular el archivo,
+        si la función recibe un string significa que es un archivo
+        Caso contrario es un objeto StringIO y se evalua directamente.
+        """
+        if isinstance(input_data, str):
+            file = open(input_data, "r")
+        else:
+            file = input_data
+        with file:
             # Evaluar solo las líneas con información
             lines = list(line for line in (l.strip() for l in file) if line)
             for line in lines:
