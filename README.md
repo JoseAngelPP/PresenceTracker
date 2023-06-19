@@ -16,6 +16,7 @@ Se creó una clase `PresenceTracker` para mantener todo organizado y estrecturad
 Los métodos y sus funciones son las siguientes:
 - `validate_datetime_format`: validar que una fecha tenga un formato en especifico. La ídea es que pueda ser usado para validar la fecha en diferentes formatos, por ejemplo, se quiere evaluar qué días son los que más presencias se tienen.
 - `process_presence`: este método evalua que la hora de entrada sea antes que la de salida, además de ir actualizando los registros de cada estudiante.
+La información se guarda en un diccionario que tiene como llave el nombre del alumno, esto para que sea facil agregar más información en futuro (calificaciones, grado escolar....)
 - `calculate_total_minutes`: evalua los minutos a los que corresponde un periodo de tiempo
 - `read_file`: lee el archivo de entrada, solo evalua las líneas con información para evitar errores.
 - `get_attendance`: itera sobre la lista de estudiantes y se imprimen sus resultados.
