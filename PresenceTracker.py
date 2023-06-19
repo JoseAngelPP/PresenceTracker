@@ -30,6 +30,9 @@ class PresenceTracker:
 
         duration = end_time - start_time
 
+        if student_name not in self.students:
+            self.students[student_name] = {"time": timedelta(), "days": 0}
+
         # Guardar el tiempo y días en la sala
         self.students[student_name]["time"] += duration
         self.students[student_name]["days"] += 1
